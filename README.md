@@ -56,3 +56,8 @@ Before running the Laravel application, ensure you have the following dependenci
 PHP
 Composer
 
+run: npm install
+
+Spin up server: run: 
+ ```shell
+ php artisan serve
