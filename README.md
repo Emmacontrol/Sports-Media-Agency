@@ -6,14 +6,16 @@
 
 To apply the infrastructure using Terraform, follow these steps:
 
-1. Apply the configuration with your secrets file using the following command:
+1. Navigate to the Infra directory.
+
+2. Apply the configuration with your secrets file using the following command:
 
    ```shell
    terraform init
    terraform plan -var-file="secret.tfvars"
    terraform apply -var-file="secret.tfvars"
 
-2. To destroy the infrastructure
+3. To destroy the infrastructure
    ```shell
    terraform destroy -var-file="secret.tfvars" -lock=false
 
@@ -22,7 +24,8 @@ To apply the infrastructure using Terraform, follow these steps:
 
 To test the Angular App locally, follow these steps:
 
-1. Navigate to the Angular app directory.
+
+1. Navigate to the Angular-app directory.
 
 2. Install Dependencies:
 
