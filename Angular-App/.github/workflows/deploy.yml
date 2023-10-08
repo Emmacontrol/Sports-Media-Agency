@@ -5,15 +5,11 @@ on:
     branches:
       - main
     paths:
-        - Angular-App/**
-        - .github/workflows/**
+        - Angular-App
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: Angular-App
 
     steps:
       - name: Checkout code
