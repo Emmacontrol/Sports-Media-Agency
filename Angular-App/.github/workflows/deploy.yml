@@ -3,7 +3,7 @@ name: Deploy Angular App to Droplet
 on:
   push:
     branches:
-      - Angular-framework
+      - main
 
 jobs:
   build-and-deploy:
