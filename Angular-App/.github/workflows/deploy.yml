@@ -5,14 +5,14 @@ on:
     branches:
       - main
     paths:
-        - 'Angular-app/deploy.yml'
+        - 'Angular-App/deploy.yml'
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: Angular-app
+        working-directory: Angular-App
 
     steps:
       - name: Checkout code
