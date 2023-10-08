@@ -5,11 +5,14 @@ on:
     branches:
       - main
     paths:
-        - 'Angular-app'
+        - 'Angular-app/**'
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Angular-app
 
     steps:
       - name: Checkout code
