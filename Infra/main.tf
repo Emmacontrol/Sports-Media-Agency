@@ -7,6 +7,7 @@ resource "digitalocean_droplet" "Angular-droplet" {
   ssh_keys = [
     "${var.digitalocean_ssh_fingerprint}"
   ]
+  monitoring = true 
 }
 
 resource "digitalocean_droplet" "Laravel-droplet" {
@@ -17,4 +18,5 @@ resource "digitalocean_droplet" "Laravel-droplet" {
   ssh_keys = [
     "${var.digitalocean_ssh_fingerprint}"
   ]
+  monitoring = true 
 }
