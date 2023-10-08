@@ -6,6 +6,7 @@ on:
       - main
     paths:
         - Angular-App/**
+        - .github/workflows/**
 
 jobs:
   build-and-deploy:
