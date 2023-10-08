@@ -1,0 +1,40 @@
+name: Deploy Angular App to Droplet
+
+on:
+  push:
+    branches:
+      - Angular-framework
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Angular-app
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Build Angular App
+        run: npm run build 
+
+      - name: copy file via ssh key
+        uses: appleboy/scp-action@master
+        env:
+          HOST: 159.203.178.16
+          USERNAME: ubuntu
+          PORT: 22
+          KEY: ${{ secrets.ANGULAR_SSH }}
+        with:
+          source: ./dist/test-app/
+          target: /var/www/angular-app
+          strip_components: 3 
