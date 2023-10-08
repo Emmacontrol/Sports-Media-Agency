@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-        - Angular-App
+        - 'Angular-App'
 
 jobs:
   build-and-deploy:
