@@ -35,9 +35,14 @@ jobs:
           echo "${{ secrets.ANGULAR_SSH }}" > ~/.ssh/secret_file
           chmod 600 ~/.ssh/secret_file
 
-      - name: SSH to Server
+      - name: SSH to Server and Create Target Directory
         run: |
-            scp -o StrictHostKeyChecking=no -r dist/* root@159.89.49.93 /var/www/Angular-app
+            ssh -o StrictHostKeyChecking=no root@159.89.49.93 "mkdir -p /var/www/Angular-app"
+    
+      - name: Copy Files to Remote Server
+        run: |
+            scp -o StrictHostKeyChecking=no -r dist/* root@159.89.49.93:/var/www/Angular-app
+    
         
 
       # - name: copy file via ssh key
