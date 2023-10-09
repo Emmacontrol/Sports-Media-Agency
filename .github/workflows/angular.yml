@@ -37,7 +37,7 @@ jobs:
 
       - name: SSH to Server
         run: |
-            scp -o StrictHostKeyChecking=no -r dist/* root@159.89.49.93:/var/www/Angular-app
+            scp -o StrictHostKeyChecking=no -r dist/* root@159.89.49.93 /var/www/Angular-app
         
 
       # - name: copy file via ssh key
