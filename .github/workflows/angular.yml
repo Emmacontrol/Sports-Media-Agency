@@ -42,7 +42,7 @@ jobs:
           username: root
           key: ${{ secrets.ANGULAR_SSH }}
           source: dist
-          target: ~/
+          strip_components: 3 
     
 
       # - name: copy file via ssh key
