@@ -34,7 +34,6 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.ANGULAR_SSH }}" > ~/.ssh/secret_file
           chmod 600 ~/.ssh/secret_file
-          ssh-add  ~/.ssh/secret_file
 
       - name: SSH to Server
         run: |
