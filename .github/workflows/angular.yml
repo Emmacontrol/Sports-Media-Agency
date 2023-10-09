@@ -24,28 +24,30 @@ jobs:
           node-version: 18.x
 
       - name: Install dependencies
-        run: npm install
-        
-      - name: Build Angular App
-        run: npm run build 
-
-      - name: Run a multi-line script
         run: |
-          mkdir ../build
-          cp -TR dist/ ../build
-          tar -cvf deploy.tar ../build/
-          pwd
+          npm install
           ls
+        
+      # - name: Build Angular App
+      #   run: npm run build 
+
+      # - name: Run a multi-line script
+      #   run: |
+      #     mkdir ../build
+      #     cp -TR dist/ ../build
+      #     tar -cvf deploy.tar ../build/
+      #     pwd
+      #     ls
      
-      - name: Deploy to Lightsail
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: 159.89.49.93
-          username: root
-          key: ${{ secrets.ANGULAR_SSH }}
-          source: dist/
-          target: /var/www/sport-media-Agency/Angular-app/
-          strip_components: 3 
+      # - name: Deploy to Lightsail
+      #   uses: appleboy/scp-action@v0.1.4
+      #   with:
+      #     host: 159.89.49.93
+      #     username: root
+      #     key: ${{ secrets.ANGULAR_SSH }}
+      #     source: dist/
+      #     target: /var/www/sport-media-Agency/Angular-app/
+      #     strip_components: 3 
         
     
 
