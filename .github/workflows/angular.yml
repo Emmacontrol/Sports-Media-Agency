@@ -39,6 +39,7 @@ jobs:
             cd  ~/.ssh/
             ls -la
             cat secret_file
+            chmod 600 ~/.ssh/secret_file
             ssh -i ~/.ssh/secret_file root@159.203.178.16
 
       - name: copy file via ssh key
