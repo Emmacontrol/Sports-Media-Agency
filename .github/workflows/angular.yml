@@ -37,7 +37,7 @@ jobs:
 
       - name: SSH to Server
         run: |
-          scp -r dist/* root@159.89.49.93:/var/www/Angular-App
+          scp -r dist/* root@159.89.49.93
 
       # - name: copy file via ssh key
       #   uses: appleboy/scp-action@master
