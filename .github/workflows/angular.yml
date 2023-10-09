@@ -48,7 +48,7 @@ jobs:
       #     strip_components: 3 
       - name: SSH to Server
         run: |
-          ssh -i ~/.ssh/secret_file ubuntu@159.203.178.16
+          ssh -i ~/.ssh/secret_file root@159.203.178.16
       # - name: Deploy to DigitalOcean
       #   env:
       #       DROPLET_IP: 159.203.178.16
