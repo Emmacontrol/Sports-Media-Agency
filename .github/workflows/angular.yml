@@ -35,34 +35,24 @@ jobs:
           echo "${{ secrets.ANGULAR_SSH }}" > ~/.ssh/secret_file
           chmod 600 ~/.ssh/secret_file
 
-      # - name: SSH to Server
-      #   run: |
-      #     scp -r dist/* root@159.89.49.93
+      - name: SSH to Server
+        run: |
+          scp -r dist/* root@159.89.49.93:/var/www/Angular-app
 
-      - name: copy file via ssh key
-        uses: appleboy/scp-action@master
-        env:
-          HOST: 159.89.49.93
-          USERNAME: root
-          PORT: 22
-          KEY: ${{ secrets.secret_file }}
-        with:
-          source: ./dist/test-app/
-          target: /var/www/angular-app
-          strip_components: 3 
-      # - name: SSH to Server
-      #   run: |
-      #     cd  ~/.ssh/
-      #     ls -la
-      #     ssh -i ~/.ssh/secret_file root@159.203.178.16
-      # - name: Deploy to DigitalOcean
+      # - name: copy file via ssh key
+      #   uses: appleboy/scp-action@master
       #   env:
-      #       DROPLET_IP: 159.203.178.16
-      #       SSH_USERNAME: ubuntu
-      #       SSH_PRIVATE_KEY: ${{ secrets.ANGULAR_SSH }}
-      #   run: |
-      #       # Copy the built Angular app files to your DigitalOcean droplet using SCP
-      #       scp -r dist/* ubuntu@159.203.178.16:/var/www/Angular-App
+      #     HOST: 159.89.49.93
+      #     USERNAME: root
+      #     PORT: 22
+      #     KEY: ${{ secrets.secret_file }}
+      #   with:
+      #     source: ./dist/test-app/
+      #     target: /var/www/angular-app
+      #     strip_components: 3 
+     
+      # #       # Copy the built Angular app files to your DigitalOcean droplet using SCP
+      #      scp -r dist/* ubuntu@159.203.178.16:/var/www/Angular-App
 
 
 
