@@ -34,21 +34,28 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.ANGULAR_SSH }}" > ~/.ssh/secret_file
           chmod 600 ~/.ssh/secret_file
-
-      # - name: copy file via ssh key
-      #   uses: appleboy/scp-action@master
-      #   env:
-      #     HOST: 159.203.178.16
-      #     USERNAME: ubuntu
-      #     PORT: 22
-      #     KEY: ${{ secrets.ANGULAR_SSH }}
-      #   with:
-      #     source: ./dist/test-app/
-      #     target: /var/www/angular-app
-      #     strip_components: 3 
       - name: SSH to Server
         run: |
-          ssh -i ~/.ssh/secret_file root@159.203.178.16
+            cd  ~/.ssh/
+            ls -la
+            ssh -i ~/.ssh/secret_file root@159.203.178.16
+
+      - name: copy file via ssh key
+        uses: appleboy/scp-action@master
+        env:
+          HOST: 159.203.178.16
+          USERNAME: ubuntu
+          PORT: 22
+          KEY: ${{ secrets.ANGULAR_SSH }}
+        with:
+          source: ./dist/test-app/
+          target: /var/www/angular-app
+          strip_components: 3 
+      # - name: SSH to Server
+      #   run: |
+      #     cd  ~/.ssh/
+      #     ls -la
+      #     ssh -i ~/.ssh/secret_file root@159.203.178.16
       # - name: Deploy to DigitalOcean
       #   env:
       #       DROPLET_IP: 159.203.178.16
