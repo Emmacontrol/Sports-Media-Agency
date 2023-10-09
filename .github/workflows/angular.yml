@@ -45,7 +45,7 @@ jobs:
           HOST: 159.89.49.93
           USERNAME: root
           PORT: 22
-          KEY: ${{ secrets.ANGULAR_SSH }}
+          KEY: $secret_file
         with:
           source: ./dist/test-app/
           target: /var/www/angular-app
