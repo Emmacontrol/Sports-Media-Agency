@@ -56,7 +56,7 @@ jobs:
             SSH_PRIVATE_KEY: ${{ secrets.ANGULAR_SSH }}
         run: |
             # Copy the built Angular app files to your DigitalOcean droplet using SCP
-            scp -r dist/* $ubuntu@$159.203.178.16:/var/www/Angular-App
+            scp -r dist/* $ubuntu@159.203.178.16:/var/www/Angular-App
   
       
     
