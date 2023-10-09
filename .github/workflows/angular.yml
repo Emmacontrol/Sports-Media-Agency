@@ -35,6 +35,7 @@ jobs:
           cp -TR dist/ ../build
           tar -cvf deploy.tar ../build/
           pwd
+          ls
      
       - name: Deploy to Lightsail
         uses: appleboy/scp-action@v0.1.4
