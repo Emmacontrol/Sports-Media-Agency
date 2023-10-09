@@ -34,6 +34,7 @@ jobs:
           mkdir ../build
           cp -TR dist/ ../build
           tar -cvf deploy.tar ../build/
+          pwd
      
       - name: Deploy to Lightsail
         uses: appleboy/scp-action@v0.1.4
@@ -44,6 +45,7 @@ jobs:
           source: build/
           target: /var/www/Angular-app/
           strip_components: 3 
+        
     
 
       # - name: copy file via ssh key
