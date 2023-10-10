@@ -5,13 +5,13 @@ on:
       branches:
         - main
       paths:
-          - 'Angular-App/**'
+          - 'Laravel-App/**'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: Angular-App
+        working-directory: Laravel-App
 
     steps:
       - name: Checkout code
