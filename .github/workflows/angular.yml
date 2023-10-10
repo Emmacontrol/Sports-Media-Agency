@@ -41,7 +41,7 @@ jobs:
           host: 159.89.49.93
           username: root
           key: ${{ secrets.ANGULAR_SSH }}
-          source: dist
+          source: deploy.tar
           target: /var/www/sport-media-Agency/Angular-app/
           strip_components: 3 
 
