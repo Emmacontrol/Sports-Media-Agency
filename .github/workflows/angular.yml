@@ -29,20 +29,23 @@ jobs:
       - name: Build Angular App
         run: npm run build 
 
+      - name: Create deployment archive
+        run: tar -czvf deploy.tar.gz -C dist .
+
       # - name: Run a multi-line script
       #   run: |
       #     mkdir ../build
       #     cp -TR dist/ ../build
       #     tar -cvf deploy.tar ../build/
 
-      - name: Create build directory
-        run: mkdir ../build
+      # - name: Create build directory
+      #   run: mkdir ../build
 
-      - name: Copy build files
-        run: cp -TR dist/ ../build
+      # - name: Copy build files
+      #   run: cp -TR dist/ ../build
 
-      - name: Create deployment archive
-        run: tar -cvf deploy.tar ../build
+      # - name: Create deployment archive
+      #   run: tar -cvf deploy.tar ../build
 
       - name: Deploy to Lightsail
         uses: appleboy/scp-action@v0.1.4
@@ -50,7 +53,7 @@ jobs:
           host: 159.89.49.93
           username: root
           key: ${{ secrets.ANGULAR_SSH }}
-          source: deploy.tar
+          source: deploy.tar.gz
           target: /var/www/sport-media-Agency/Angular-app/
           strip_components: 3 
 
