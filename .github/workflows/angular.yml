@@ -33,34 +33,17 @@ jobs:
         run: |
           mkdir ../build
           cp -TR dist/ ../build
-          tar -cvf deploy.tar ../build/
+          tar -cvf deploy.tar -C ../build .
 
-      - name: List files in dist directory
-        run: |
-          pwd
-          ls -l dist
-
-      # - name: Create build directory
-      #   run: mkdir ../build
-
-      # - name: Copy build files
-      #   run: cp -TR dist/ ../build
-      
-      # - name: List files in dist directory
-      #   run: ls -l build
-
-      # - name: Create deployment archive
-      #   run: tar -cvf deploy.tar ../build
-
-      # - name: Deploy to Lightsail
-      #   uses: appleboy/scp-action@v0.1.4
-      #   with:
-      #     host: 159.89.49.93
-      #     username: root
-      #     key: ${{ secrets.ANGULAR_SSH }}
-      #     source: deploy.tar.gz
-      #     target: /var/www/sport-media-Agency/Angular-app/
-      #     strip_components: 3 
+      - name: Deploy to Lightsail
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: 159.89.49.93
+          username: root
+          key: ${{ secrets.ANGULAR_SSH }}
+          source: build/
+          target: /var/www/sport-media-Agency/Angular-app/
+          strip_components: 3 
 
 
           
