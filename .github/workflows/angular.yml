@@ -29,24 +29,20 @@ jobs:
       - name: Build Angular App
         run: npm run build 
 
-      - name: Create deployment archive
-        run: tar -czvf deploy.tar.gz -C dist .
-
-      - name: List files in dist directory
-        run: ls -l dist
-      
-
       # - name: Run a multi-line script
       #   run: |
       #     mkdir ../build
       #     cp -TR dist/ ../build
       #     tar -cvf deploy.tar ../build/
 
-      # - name: Create build directory
-      #   run: mkdir ../build
+      - name: Create build directory
+        run: mkdir ../build
 
-      # - name: Copy build files
-      #   run: cp -TR dist/ ../build
+      - name: Copy build files
+        run: cp -TR dist/ ../build
+      
+      - name: List files in dist directory
+        run: ls -l build
 
       # - name: Create deployment archive
       #   run: tar -cvf deploy.tar ../build
