@@ -37,7 +37,5 @@ jobs:
           key: ${{ secrets.ANGULAR_SSH }}
           source: Angular-App/dist/angular-framework
           target: /var/www/sport-media-Agency/Angular-app/
-          strip_components: 3 
-
 
           

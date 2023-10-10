@@ -1,0 +1,37 @@
+name: Deploy Laravel to DigitalOcean
+
+on:
+    push:
+      branches:
+        - main
+      paths:
+          - 'Angular-App/**'
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Angular-App
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Install Composer Dependencies
+        run: composer install
+
+      - name: Build Laravel Application
+        run: php artisan build
+
+    #   - name: Deploy to DigitalOcean
+    #     run: |
+    #       # Upload your application to the droplet using SCP or any deployment method you prefer
+    #       scp -r ./ user@your-droplet-ip:/path/to/your/app
+
+    #       # SSH into the droplet and do deployment tasks like running migrations, etc.
+    #       ssh user@your-droplet-ip "cd /path/to/your/app && php artisan migrate"
