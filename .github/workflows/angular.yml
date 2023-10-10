@@ -29,14 +29,16 @@ jobs:
       - name: Build Angular App
         run: npm run build 
 
-      - name: List files in dist directory
-        run: ls -l
+      - name: Run a multi-line script
+        run: |
+          mkdir ../build
+          cp -TR dist/ ../build
+          tar -cvf deploy.tar ../build/
 
-      # - name: Run a multi-line script
-      #   run: |
-      #     mkdir ../build
-      #     cp -TR dist/ ../build
-      #     tar -cvf deploy.tar ../build/
+      - name: List files in dist directory
+        run: |
+          pwd
+          ls -l
 
       # - name: Create build directory
       #   run: mkdir ../build
