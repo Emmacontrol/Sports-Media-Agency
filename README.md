@@ -20,11 +20,24 @@ To apply the infrastructure using Terraform, follow these steps:
 
 To deploy both Applications after a pull-request to main has been merged, follow these steps:
 
-1. create your own branch and Navigate to the app directory.
+1. clone the clone 
+2. create a branch
+3. cd to the app directory `Laravel-App or Angular-App`
+4. create a branch and make a change in any of the app directory
+5. Push your changes and create a Pull-request to the main branch
+6. merge your pull-request to main.
 
-2. Make changes in the app directory and create a Pull-request to the main branch
-
-3. The pipeline will build and deploy when the pull-request has been merge to the main branch
+The pipeline will build and deploy when the pull-request has been merged successfully to the main branch
 
 ## Note:
 The pipeline will only when changes are made in the app directory
+
+## Test Cpu, Ram and Disk monitoring
+1. Run a stress test in the server using 
+    `stress --cpu 1 --timeout 360s`
+
+2. open another terminal for the server and run this command 
+       `top`
+
+An email will be sent to you after 5mins, to notify you of the cpu usage.
+
