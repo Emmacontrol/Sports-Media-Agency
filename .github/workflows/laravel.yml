@@ -53,6 +53,6 @@ jobs:
             host: 68.183.26.42
             username: root
             key: ${{ secrets.LARAVEL_SSH }}
-            source: Laravel-App/public/build/
+            source: Laravel-App/public/
             target: /var/www/sport-media-Agency/Laravel-app/
             strip_components: 3 
