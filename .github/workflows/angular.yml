@@ -1,5 +1,4 @@
 name: Deploy Angular App to Droplet
-
 on:
   push:
     branches:
