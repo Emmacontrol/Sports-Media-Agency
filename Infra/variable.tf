@@ -19,3 +19,8 @@ variable "digitalocean_private_key" {
   type        = string
   description = "The path to your private SSH key"
 }
+
+variable "digitalocean_email" {
+  type        = string
+  description = "The email address to send monitoring alert"
+}
