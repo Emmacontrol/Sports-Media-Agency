@@ -8,8 +8,6 @@ resource "digitalocean_loadbalancer" "angular" {
 
     target_port     = 80
     target_protocol = "http"
-
-    certificate_name = digitalocean_certificate.cert.name
   }
 
   healthcheck {
@@ -20,7 +18,7 @@ resource "digitalocean_loadbalancer" "angular" {
   droplet_ids = [digitalocean_droplet.Angular-droplet.id]
 }
 
-resource "digitalocean_loadbalancer" "larave;" {
+resource "digitalocean_loadbalancer" "laravel" {
   name   = "loadbalancer-2"
   region = "nyc3"
 
@@ -30,8 +28,6 @@ resource "digitalocean_loadbalancer" "larave;" {
 
     target_port     = 80
     target_protocol = "http"
-
-    certificate_name = digitalocean_certificate.cert.name
   }
 
   healthcheck {
