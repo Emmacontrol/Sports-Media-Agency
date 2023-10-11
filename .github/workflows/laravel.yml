@@ -53,3 +53,13 @@ jobs:
             key: ${{ secrets.LARAVEL_SSH }}
             source: Laravel-App/
             target: /var/www/sport-media-Agency/
+
+      - name: Set Permissions and Ownership
+        run: |
+              # Set ownership to www-data (Nginx user)
+              chown -R www-data:www-data /var/www/sport-media-Agency/Laravel-App/storage
+
+      - name: Restart Nginx
+        run: sudo systemctl restart nginx
+
+    
