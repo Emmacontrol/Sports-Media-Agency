@@ -55,4 +55,3 @@ jobs:
             key: ${{ secrets.LARAVEL_SSH }}
             source: Laravel-App/public/
             target: /var/www/sport-media-Agency/Laravel-app/
-            strip_components: 3 
