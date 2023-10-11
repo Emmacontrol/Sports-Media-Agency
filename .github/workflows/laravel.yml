@@ -54,4 +54,4 @@ jobs:
             username: root
             key: ${{ secrets.LARAVEL_SSH }}
             source: Laravel-App/public/
-            target: /var/www/sport-media-Agency/Laravel-app/
+            target: /var/www/sport-media-Agency/
