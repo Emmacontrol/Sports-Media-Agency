@@ -1,5 +1,3 @@
-# Sports-Media-Agency
-
 # Infrastructure
 
 ## Applying Infrastructure with Terraform
@@ -10,57 +8,23 @@ To apply the infrastructure using Terraform, follow these steps:
 
 2. Apply the configuration with your secrets file using the following command:
 
-   ```shell
-   terraform init
-   terraform plan -var-file="secret.tfvars"
-   terraform apply -var-file="secret.tfvars"
+   `terraform init
+   terraform plan 
+   terraform apply
 
 3. To destroy the infrastructure
    ```shell
-   terraform destroy -var-file="secret.tfvars" -lock=false
+   terraform destroy 
 
-# Angular Application
-## Testing the Angular App Locally
+## How to Deploy Both the Angular-app and Laravel-app
 
-To test the Angular App locally, follow these steps:
+To deploy both Applications after a pull-request to main has been merged, follow these steps:
 
+1. create your own branch and Navigate to the app directory.
 
-1. Navigate to the Angular-app directory.
+2. Make changes in the app directory and create a Pull-request to the main branch
 
-2. Install Dependencies:
+3. The pipeline will build and deploy when the pull-request has been merge to the main branch
 
-   Install the Angular CLI globally:
-   ```shell
-   npm install -g @angular/cli
-
-   Verify the Angular CLI installation:
-
-   ```shell
-   ng version
-
-   Install project-specific dependencies:
-
-   ```shell
-   npm install
-
-##Set Up the Local Development Server:
-
-   Start the Angular development server and open the app in your default web browser:
-
-   ```shell
-   ng serve --open
-
-
-# Angular Application
-## Testing the Angular App Locally
-
-Before running the Laravel application, ensure you have the following dependencies installed:
-
-PHP
-Composer
-
-run: npm install
-
-Spin up server: run: 
- ```shell
- php artisan serve
+## Note:
+The pipeline will only when changes are made in the app directory
