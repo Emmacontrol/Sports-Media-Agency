@@ -41,3 +41,7 @@ The pipeline will only when changes are made in the app directory
 
 An email will be sent to you after 5mins, to notify you of the cpu usage.
 
+## Link to loom video
+
+`https://www.loom.com/share/9dce5cb53daf46b886c58390a0a42f7f`
+
